@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using only the simulated robot &mdash; Robotont 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sensors" href="sensors.html" />
+    <link rel="prev" title="Using the robot with a user PC" href="setup_robot_pc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Robotont
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="setup.html">Setup</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_robot_pc.html">Using the robot with a user PC</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using only the simulated robot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-ubuntu">Installing Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-ros">Installing ROS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-catkin-workspace">Creating a catkin workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloning-robotont-s-packages">Cloning Robotont’s packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-catkin-workspace">Building the catkin workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sourcing-the-workspace">Sourcing the workspace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Robotont</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="setup.html">Setup</a> &raquo;</li>
+        
+      <li>Using only the simulated robot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/files/setup_pc_only.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-only-the-simulated-robot">
+<h1>Using only the simulated robot<a class="headerlink" href="#using-only-the-simulated-robot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installing-ubuntu">
+<h2>Installing Ubuntu<a class="headerlink" href="#installing-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>Download and install Ubuntu Linux on your PC from the following link: <a class="reference external" href="http://releases.ubuntu.com/18.04.4/?_ga=2.170843936.1678816316.1594710587-1973467440.1591964081">Ubuntu 18.04.4 LTS (Bionic Beaver)</a>.</p>
+<p>The guide to install Ubuntu on your PC can be found <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview">here</a>.</p>
+</div>
+<div class="section" id="installing-ros">
+<h2>Installing ROS<a class="headerlink" href="#installing-ros" title="Permalink to this headline">¶</a></h2>
+<p>Install Ros Melodic by following the guide: <a class="reference external" href="http://wiki.ros.org/melodic/Installation/Ubuntu">Ros Melodic</a>.</p>
+</div>
+<div class="section" id="creating-a-catkin-workspace">
+<h2>Creating a catkin workspace<a class="headerlink" href="#creating-a-catkin-workspace" title="Permalink to this headline">¶</a></h2>
+<p>Create a workspace for catkin as shown <a class="reference external" href="http://wiki.ros.org/catkin/Tutorials/create_a_workspace">here</a>.</p>
+</div>
+<div class="section" id="cloning-robotont-s-packages">
+<h2>Cloning Robotont’s packages<a class="headerlink" href="#cloning-robotont-s-packages" title="Permalink to this headline">¶</a></h2>
+<p>All Robotont’s packages can be accessed from <a class="reference external" href="https://github.com/robotont">Robotont’s GitHub</a>.</p>
+<p>To clone the packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont/package_name.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-the-catkin-workspace">
+<h2>Building the catkin workspace<a class="headerlink" href="#building-the-catkin-workspace" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> catkin_ws
+catkin build
+</pre></div>
+</div>
+</div>
+<div class="section" id="sourcing-the-workspace">
+<h2>Sourcing the workspace<a class="headerlink" href="#sourcing-the-workspace" title="Permalink to this headline">¶</a></h2>
+<p>Make the workspace visible to ROS (must be done for every new terminal)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
+</pre></div>
+</div>
+<p>For automatic sourcing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sensors.html" class="btn btn-neutral float-right" title="Sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup_robot_pc.html" class="btn btn-neutral float-left" title="Using the robot with a user PC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, M
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

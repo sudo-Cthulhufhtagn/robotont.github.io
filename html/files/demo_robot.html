@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Demos on Robotont &mdash; Robotont 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Demos on Gazebo" href="demo_gazebo.html" />
+    <link rel="prev" title="Demos" href="demos.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Robotont
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="demos.html">Demos</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Demos on Robotont</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3D mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ar-tracking">AR tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ros-navstack">ROS navstack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="demo_gazebo.html">Demos on Gazebo</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Robotont</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="demos.html">Demos</a> &raquo;</li>
+        
+      <li>Demos on Robotont</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/files/demo_robot.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="demos-on-robotont">
+<h1>Demos on Robotont<a class="headerlink" href="#demos-on-robotont" title="Permalink to this headline">¶</a></h1>
+<p>Before starting establish an ssh connection between the robot and the user PC as shown here: <a class="reference internal" href="setup_robot_pc.html#connecting-remotely"><span class="std std-ref">Connecting with the robot remotely</span></a>.</p>
+<p>The following packages are needed to run the demos:</p>
+<ol class="arabic">
+<li><p class="first">For 2D mapping:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install ros-melodic-depthimage-to-laserscan
+sudo apt install ros-melodic-cartographer-ros
+sudo apt install ros-melodic-move-base
+</pre></div>
+</div>
+</li>
+<li><p class="first">For 3D mapping:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-rtabmap-ros
+</pre></div>
+</div>
+</li>
+<li><p class="first">For AR tracking:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-ar-track-alvar
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="section" id="d-mapping">
+<h2>2D mapping<a class="headerlink" href="#d-mapping" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>On Robotont on-board computer</strong> launch 2d_nav_carto.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_nav_carto.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>On PC</strong> launch display_2d_mapping.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_2d_mapping.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">To move the robot open another terminal window <strong>on the PC</strong> and run teleop twist keyboard</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>3D mapping<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>On Robotont on-board computer</strong> launch 3d_mapping.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 3d_mapping.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>On PC</strong> launch display_3d_mapping.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_3d_mapping.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">To move the robot open another terminal window <strong>on the user PC</strong> and run teleop twist keyboard</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:<span class="o">=</span>/robotont
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/3dmap.png"><img alt="../_images/3dmap.png" src="../_images/3dmap.png" style="width: 400px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="ar-tracking">
+<h2>AR tracking<a class="headerlink" href="#ar-tracking" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>On Robotont on-board computer</strong> launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch roslaunch robotont_demos ar_follow_the_leader.launch marker_id:<span class="o">=</span>tag_nr
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>On PC</strong> launch display_ar_marker.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_ar_marker.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">To move the robot open another terminal window <strong>on PC</strong> and run teleop twist keyboard</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="ros-navstack">
+<h2>ROS navstack<a class="headerlink" href="#ros-navstack" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.</p>
+</li>
+<li><p class="first">For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.</p>
+<a class="reference internal image-reference" href="../_images/poseestimatearrow.png"><img alt="../_images/poseestimatearrow.png" src="../_images/poseestimatearrow.png" style="width: 400px;" /></a>
+</li>
+<li><p class="first">To tell the robot where to go, click on 2D Nav Goal
+and drag the arrow to where you want the robot to go
+and which way does it have to face.</p>
+</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/2dnavgoalarrow.png"><img alt="../_images/2dnavgoalarrow.png" src="../_images/2dnavgoalarrow.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>From <em>planner.yaml</em> you can tune the parameters for the planner. Reference can be found <a class="reference external" href="http://wiki.ros.org/base_local_planner">here</a>.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="demo_gazebo.html" class="btn btn-neutral float-right" title="Demos on Gazebo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="demos.html" class="btn btn-neutral float-left" title="Demos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, M
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
