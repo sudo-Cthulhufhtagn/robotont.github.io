@@ -87,15 +87,12 @@
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="demos.html">Demos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="demos_before_starting.html">Before starting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Demos on Gazebo</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#launching-the-simulation">Launching the Simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D Mapping</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gmapping">gmapping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#google-cartographer">Google Cartographer</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D Mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ros-navstack">ROS navstack</a></li>
 </ul>
 </li>
@@ -170,11 +167,12 @@
             
   <div class="section" id="demos-on-gazebo">
 <h1>Demos on Gazebo<a class="headerlink" href="#demos-on-gazebo" title="Permalink to this headline">¶</a></h1>
+<p>Before getting started see: <a class="reference internal" href="demos_before_starting.html#before-starting"><span class="std std-ref">Before starting</span></a>.</p>
 <div class="section" id="launching-the-simulation">
 <h2>Launching the Simulation<a class="headerlink" href="#launching-the-simulation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">To launch the simulator:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_teleop_keyboard.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch
 </pre></div>
 </div>
 </li>
@@ -219,40 +217,29 @@
 </div>
 <div class="section" id="d-mapping">
 <h2>2D Mapping<a class="headerlink" href="#d-mapping" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="gmapping">
-<h3>gmapping<a class="headerlink" href="#gmapping" title="Permalink to this headline">¶</a></h3>
+<p>Uses Cartographer to create a 2D map of the robot’s surroundings.</p>
 <ol class="arabic">
 <li><p class="first">Launch the simulator</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_world_minimaze.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first">Launch the gmapping software and visualize the map on RViz</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_gmapping.launch
+<li><p class="first">Launch teleop keyboard</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first">Drive around using the keyboard and map the world</p>
+<li><p class="first">Launch 2d_slam.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">Display the map on RViz</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam_display.launch
+</pre></div>
+</div>
 </li>
 </ol>
-</div>
-<div class="section" id="google-cartographer">
-<h3>Google Cartographer<a class="headerlink" href="#google-cartographer" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p class="first">Launch the simulator</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_world_minimaze.launch
-</pre></div>
-</div>
-</li>
-<li><p class="first">Launch Google Cartographer software and visualize the map on RViz</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo 2d_nav_carto_gazebo.launch
-</pre></div>
-</div>
-</li>
-<li><p class="first">Drive around using the keyboard and map the world</p>
-</li>
-</ol>
-</div>
 </div>
 <div class="section" id="ros-navstack">
 <h2>ROS navstack<a class="headerlink" href="#ros-navstack" title="Permalink to this headline">¶</a></h2>
@@ -270,9 +257,6 @@ and which way does it have to face.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/2dnavgoalarrow.png"><img alt="../_images/2dnavgoalarrow.png" src="../_images/2dnavgoalarrow.png" style="width: 400px;" /></a>
 </div></blockquote>
-<ol class="arabic simple">
-<li>From <em>planner.yaml</em> you can tune the parameters for the planner. Reference can be found <a class="reference external" href="http://wiki.ros.org/base_local_planner">here</a>.</li>
-</ol>
 </div>
 </div>
 

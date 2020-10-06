@@ -1,3 +1,5 @@
+.. _setup_pc_only:
+
 ##############################
 Using only the simulated robot
 ##############################

@@ -2,6 +2,8 @@
 Using the robot with a user PC
 ##############################
 
+.. _setting_up_pc:
+
 Setting up the PC
 ======================
 
@@ -57,7 +59,7 @@ For automatic sourcing:
 
       echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-.. _connecting-remotely:
+.. _connecting_remotely:
 
 Connecting with the robot remotely
 ===================================
@@ -96,6 +98,7 @@ Connecting with the robot remotely
 
 7. After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with tail ~/.bashrc command to examine which workspaces are sourced.
 
+.. _same_env:
 
 Getting the Robotont and PC into the same ROS environment
 =========================================================

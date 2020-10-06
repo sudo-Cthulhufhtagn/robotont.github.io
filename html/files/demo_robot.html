@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Demos on Gazebo" href="demo_gazebo.html" />
-    <link rel="prev" title="Demos" href="demos.html" /> 
+    <link rel="prev" title="Before starting" href="demos_before_starting.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="demos.html">Demos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="demos_before_starting.html">Before starting</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Demos on Robotont</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">3D mapping</a></li>
@@ -167,7 +168,8 @@
             
   <div class="section" id="demos-on-robotont">
 <h1>Demos on Robotont<a class="headerlink" href="#demos-on-robotont" title="Permalink to this headline">¶</a></h1>
-<p>Before starting establish an ssh connection between the robot and the user PC as shown here: <a class="reference internal" href="setup_robot_pc.html#connecting-remotely"><span class="std std-ref">Connecting with the robot remotely</span></a>.</p>
+<p>Before using the demos see: <a class="reference internal" href="demos_before_starting.html#before-starting"><span class="std std-ref">Before starting</span></a>.</p>
+<p>Note that some of the commands will run on Robotont on-board computer and some on user PC.</p>
 <p>The following packages are needed to run the demos:</p>
 <ol class="arabic">
 <li><p class="first">For 2D mapping:</p>
@@ -191,14 +193,15 @@ sudo apt install ros-melodic-move-base
 </ol>
 <div class="section" id="d-mapping">
 <h2>2D mapping<a class="headerlink" href="#d-mapping" title="Permalink to this headline">¶</a></h2>
+<p>Uses Cartographer to create a 2D map of the robot’s surroundings.</p>
 <ol class="arabic">
-<li><p class="first"><strong>On Robotont on-board computer</strong> launch 2d_nav_carto.launch</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_nav_carto.launch
+<li><p class="first"><strong>On Robotont on-board computer</strong> launch 2d_slam.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>On PC</strong> launch display_2d_mapping.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_2d_mapping.launch
+<li><p class="first"><strong>On PC</strong> launch 2d_slam_display.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam_display.launch
 </pre></div>
 </div>
 </li>
@@ -215,19 +218,20 @@ sudo apt install ros-melodic-move-base
 </div>
 <div class="section" id="id1">
 <h2>3D mapping<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Creates a 3D map of the robot’s surroundings.</p>
 <ol class="arabic">
 <li><p class="first"><strong>On Robotont on-board computer</strong> launch 3d_mapping.launch</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 3d_mapping.launch
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>On PC</strong> launch display_3d_mapping.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_3d_mapping.launch
+<li><p class="first"><strong>On PC</strong> launch 3d_mapping_display.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 3d_mapping_display.launch
 </pre></div>
 </div>
 </li>
 <li><p class="first">To move the robot open another terminal window <strong>on the user PC</strong> and run teleop twist keyboard</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:<span class="o">=</span>/robotont
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun robotont_demos teleop_keyboard.launch
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -242,14 +246,15 @@ sudo apt install ros-melodic-move-base
 </div>
 <div class="section" id="ar-tracking">
 <h2>AR tracking<a class="headerlink" href="#ar-tracking" title="Permalink to this headline">¶</a></h2>
+<p>The robot identifies and tracks the pose of the provided AR tag and acts accordingly.</p>
 <ol class="arabic">
 <li><p class="first"><strong>On Robotont on-board computer</strong> launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch roslaunch robotont_demos ar_follow_the_leader.launch marker_id:<span class="o">=</span>tag_nr
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>On PC</strong> launch display_ar_marker.launch to visualize the result</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_ar_marker.launch
+<li><p class="first"><strong>On PC</strong> launch ar_marker_display.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos ar_marker_display.launch
 </pre></div>
 </div>
 </li>
@@ -280,9 +285,6 @@ and which way does it have to face.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/2dnavgoalarrow.png"><img alt="../_images/2dnavgoalarrow.png" src="../_images/2dnavgoalarrow.png" style="width: 400px;" /></a>
 </div></blockquote>
-<ol class="arabic simple">
-<li>From <em>planner.yaml</em> you can tune the parameters for the planner. Reference can be found <a class="reference external" href="http://wiki.ros.org/base_local_planner">here</a>.</li>
-</ol>
 </div>
 </div>
 
@@ -297,7 +299,7 @@ and which way does it have to face.</p>
         <a href="demo_gazebo.html" class="btn btn-neutral float-right" title="Demos on Gazebo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="demos.html" class="btn btn-neutral float-left" title="Demos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="demos_before_starting.html" class="btn btn-neutral float-left" title="Before starting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

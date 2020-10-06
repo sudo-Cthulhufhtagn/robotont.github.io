@@ -2,7 +2,9 @@
 Demos on Robotont
 #################
 
-Before starting establish an ssh connection between the robot and the user PC as shown here: :ref:`connecting-remotely`.
+Before using the demos see: :ref:`before_starting`.
+
+Note that some of the commands will run on Robotont on-board computer and some on user PC.
 
 The following packages are needed to run the demos:
 
@@ -32,17 +34,19 @@ The following packages are needed to run the demos:
 2D mapping
 ----------
 
-#. **On Robotont on-board computer** launch 2d_nav_carto.launch
+Uses Cartographer to create a 2D map of the robot's surroundings.
+
+#. **On Robotont on-board computer** launch 2d_slam.launch
 
    .. code-block:: bash
       
-      roslaunch robotont_demos 2d_nav_carto.launch
+      roslaunch robotont_demos 2d_slam.launch
 
-#. **On PC** launch display_2d_mapping.launch to visualize the result
+#. **On PC** launch 2d_slam_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch robotont_demos display_2d_mapping.launch
+      roslaunch robotont_demos 2d_slam_display.launch
 
 #. To move the robot open another terminal window **on the PC** and run teleop twist keyboard
 
@@ -55,23 +59,25 @@ The following packages are needed to run the demos:
 3D mapping
 ----------
 
+Creates a 3D map of the robot's surroundings.
+
 #. **On Robotont on-board computer** launch 3d_mapping.launch
 
    .. code-block:: bash
       
       roslaunch robotont_demos 3d_mapping.launch
 
-#. **On PC** launch display_3d_mapping.launch to visualize the result
+#. **On PC** launch 3d_mapping_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch robotont_demos display_3d_mapping.launch
+      roslaunch robotont_demos 3d_mapping_display.launch
 
 #. To move the robot open another terminal window **on the user PC** and run teleop twist keyboard
 
    .. code-block:: bash
       
-      rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:=/robotont
+      rosrun robotont_demos teleop_keyboard.launch
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
@@ -80,17 +86,20 @@ The following packages are needed to run the demos:
 
 AR tracking
 -----------
+
+The robot identifies and tracks the pose of the provided AR tag and acts accordingly.
+
 #. **On Robotont on-board computer** launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)
 
    .. code-block:: bash
       
       roslaunch roslaunch robotont_demos ar_follow_the_leader.launch marker_id:=tag_nr
 
-#. **On PC** launch display_ar_marker.launch to visualize the result
+#. **On PC** launch ar_marker_display.launch to visualize the result
 
    .. code-block:: bash
       
-      roslaunch robotont_demos display_ar_marker.launch
+      roslaunch robotont_demos ar_marker_display.launch
 
 #. To move the robot open another terminal window **on PC** and run teleop twist keyboard
 
@@ -117,6 +126,3 @@ ROS navstack
 
    .. image:: /files/pictures/2dnavgoalarrow.png
     :width: 400
-
-
-#. From *planner.yaml* you can tune the parameters for the planner. Reference can be found `here <http://wiki.ros.org/base_local_planner>`__.

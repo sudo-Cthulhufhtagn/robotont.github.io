@@ -2,6 +2,7 @@
 Demos on Gazebo
 ###############
 
+Before getting started see: :ref:`before_starting`.
 
 Launching the Simulation
 ------------------------
@@ -10,7 +11,7 @@ Launching the Simulation
 
    .. code-block:: bash
       
-      roslaunch robotont_gazebo gazebo_teleop_keyboard.launch
+      roslaunch robotont_gazebo gazebo.launch
 
 
 There are two arguments on the launch file, that change the map and the position, where the robot will spawn: 
@@ -66,9 +67,7 @@ Maps
 
 2D Mapping
 -----------
-
-gmapping
-********
+Uses Cartographer to create a 2D map of the robot's surroundings.
 
 #. Launch the simulator
 
@@ -76,30 +75,24 @@ gmapping
       
       roslaunch robotont_gazebo gazebo_world_minimaze.launch
 
-#. Launch the gmapping software and visualize the map on RViz
+#. Launch teleop keyboard
 
    .. code-block:: bash
       
-      roslaunch robotont_gazebo gazebo_gmapping.launch
+      roslaunch robotont_demos teleop_keyboard.launch 
 
-#. Drive around using the keyboard and map the world
-
-Google Cartographer
-*******************
-#. Launch the simulator
+#. Launch 2d_slam.launch
 
    .. code-block:: bash
       
-      roslaunch robotont_gazebo gazebo_world_minimaze.launch
+      roslaunch robotont_demos 2d_slam.launch
 
-#. Launch Google Cartographer software and visualize the map on RViz
+#. Display the map on RViz
 
    .. code-block:: bash
       
-      roslaunch robotont_gazebo 2d_nav_carto_gazebo.launch
-    
-#. Drive around using the keyboard and map the world
-
+      roslaunch robotont_demos 2d_slam_display.launch
+ 
 
 ROS navstack
 ------------------
@@ -117,6 +110,3 @@ ROS navstack
 
    .. image:: /files/pictures/2dnavgoalarrow.png
     :width: 400
-
-
-#. From *planner.yaml* you can tune the parameters for the planner. Reference can be found `here <http://wiki.ros.org/base_local_planner>`__.
