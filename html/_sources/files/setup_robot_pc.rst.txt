@@ -2,6 +2,9 @@
 Using the robot with a user PC
 ##############################
 
+
+This setup tutorial will guide you through setting up your PC to use it with Robotont.
+
 .. _setting_up_pc:
 
 Setting up the PC
@@ -29,6 +32,17 @@ Cloning Robotont's packages
 -----------------------------
 
 All Robotont's packages can be accessed from `Robotont's GitHub <https://github.com/robotont>`__.
+
+Packages necessary to run the demos from PC's terminal are following:
+
+#. `robotont_description <https://github.com/robotont/robotont_description>`__
+
+#. `robotont_nuc_description <https://github.com/robotont/robotont_nuc_description>`__
+
+#. `robotont_navigation <https://github.com/robotont/robotont_gazebo>`__
+
+#. `robotont_demos <https://github.com/robotont/robotont_demos>`__
+
 
 To clone the packages:
 
@@ -169,3 +183,8 @@ If you want to configure IP based communication there is no need to edit the hos
 
 
 Similarly to the hostname based setup, append the commands to `.bashrc` to set the variables automatically.
+
+Running the demos with Gazebo
+-----------------------------
+
+Tutorial for running the demos can be found here: :ref:`demos_on_robot`.

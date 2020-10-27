@@ -51,7 +51,7 @@ Specification
    "Encoder resolution (motor)", "64 counts per revolution"
    "Encoder resolution (gearbox)", "1200 counts per revolution"
 
-`3D depth camera – Intel Realsense D435 <3D depth camera – Intel Realsense D435/>`__
+`3D depth camera – Intel Realsense D435 <https://www.intelrealsense.com/depth-camera-d435/>`__
 
 .. csv-table::
    :widths: 20, 20

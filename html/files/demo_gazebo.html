@@ -91,9 +91,12 @@
 <li class="toctree-l2"><a class="reference internal" href="demo_robot.html">Demos on Robotont</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Demos on Gazebo</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#launching-the-simulation">Launching the Simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#maps">Maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D Mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ros-navstack">ROS navstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#worlds">Worlds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D Mapping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ros-navstack">ROS navstack</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3D mapping</a></li>
 </ul>
 </li>
 </ul>
@@ -166,8 +169,29 @@
            <div itemprop="articleBody">
             
   <div class="section" id="demos-on-gazebo">
-<h1>Demos on Gazebo<a class="headerlink" href="#demos-on-gazebo" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Demos on Gazebo<a class="headerlink" href="#demos-on-gazebo" title="Permalink to this headline">¶</a></h1>
 <p>Before getting started see: <a class="reference internal" href="demos_before_starting.html#before-starting"><span class="std std-ref">Before starting</span></a>.</p>
+<p>The following packages are needed to run the demos:</p>
+<ol class="arabic">
+<li><p class="first">For 2D mapping:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install ros-melodic-depthimage-to-laserscan
+sudo apt install ros-melodic-cartographer-ros
+sudo apt install ros-melodic-move-base
+</pre></div>
+</div>
+</li>
+<li><p class="first">For 3D mapping:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-rtabmap-ros
+</pre></div>
+</div>
+</li>
+<li><p class="first">For AR tracking:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-ar-track-alvar
+</pre></div>
+</div>
+</li>
+</ol>
 <div class="section" id="launching-the-simulation">
 <h2>Launching the Simulation<a class="headerlink" href="#launching-the-simulation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -177,39 +201,71 @@
 </div>
 </li>
 </ol>
-<p>There are two arguments on the launch file, that change the map and the position, where the robot will spawn:</p>
-<ul class="simple">
-<li>world - the map where the robot will spawn, the default map is empty world</li>
-<li>x_pos - x coordinate of the map, controls where the robot will spawn</li>
-</ul>
-<p>For example, the following command will spawn the robot to a map called minimaze.world in position x=2:</p>
+<p>The launch file has four arguments:</p>
+<ul>
+<li><p class="first">model - chooses between a model with NUC and realsense and a model without them</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_teleop_keyboard.launch world:<span class="o">=</span><span class="k">$(</span>rospack find robotont_gazebo<span class="k">)</span>/worlds/bangbang.world x_pos:<span class="o">=</span><span class="m">2</span>
+<div><ul class="simple">
+<li>default: robotont_gazebo_nuc</li>
+<li>options: robotont_gazebo_nuc, robotont_gazebo_basic</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">world - chooses which world to use</p>
+<blockquote>
+<div><ul class="simple">
+<li>default: empty.world</li>
+<li>options: empty.world, minimaze.world, bangbang.world, between.world, colors.world</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">x_pos - chooses x coordinate of the world, controls where the robot will spawn, default: 0</p>
+</li>
+<li><p class="first">driver_hack: chooses whether a driver_hack will be used or not, is necessary if the robot will turn very slowly while using the simulator</p>
+<blockquote>
+<div><ul class="simple">
+<li>default: true</li>
+<li>options: true, false</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>For example, the following command will spawn the robot to a map called bangbang.world in position x=2,
+the model that will be used is robotont_gazebo_nuc and driver_hack will be on.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch world:<span class="o">=</span><span class="k">$(</span>rospack find robotont_gazebo<span class="k">)</span>/worlds/bangbang.world model:<span class="o">=</span>robotont_gazebo_nuc x_pos:<span class="o">=</span><span class="m">2</span> driver_hack:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="maps">
-<h2>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="worlds">
+<h2>Worlds<a class="headerlink" href="#worlds" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">minimaze.world</p>
 <a class="reference internal image-reference" href="../_images/maze.png"><img alt="../_images/maze.png" src="../_images/maze.png" style="width: 400px;" /></a>
 <p>To run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_world_minimaze.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze.launch
 </pre></div>
 </div>
 </li>
 <li><p class="first">bangbang.world</p>
 <a class="reference internal image-reference" href="../_images/bangbang.png"><img alt="../_images/bangbang.png" src="../_images/bangbang.png" style="width: 400px;" /></a>
 <p>To run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_world_between.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_bangbang.launch
 </pre></div>
 </div>
 </li>
 <li><p class="first">between.world</p>
 <a class="reference internal image-reference" href="../_images/between.png"><img alt="../_images/between.png" src="../_images/between.png" style="width: 400px;" /></a>
 <p>To run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_world_bangbang.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_between.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">colors.world</p>
+<a class="reference internal image-reference" href="../_images/colors.png"><img alt="../_images/colors.png" src="../_images/colors.png" style="width: 400px;" /></a>
+<p>To run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_colors.launch
 </pre></div>
 </div>
 </li>
@@ -220,7 +276,7 @@
 <p>Uses Cartographer to create a 2D map of the robot’s surroundings.</p>
 <ol class="arabic">
 <li><p class="first">Launch the simulator</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo_world_minimaze.launch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze.launch
 </pre></div>
 </div>
 </li>
@@ -240,9 +296,8 @@
 </div>
 </li>
 </ol>
-</div>
 <div class="section" id="ros-navstack">
-<h2>ROS navstack<a class="headerlink" href="#ros-navstack" title="Permalink to this headline">¶</a></h2>
+<h3>ROS navstack<a class="headerlink" href="#ros-navstack" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.</p>
 </li>
@@ -256,6 +311,40 @@ and which way does it have to face.</p>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/2dnavgoalarrow.png"><img alt="../_images/2dnavgoalarrow.png" src="../_images/2dnavgoalarrow.png" style="width: 400px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>3D mapping<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Creates a 3D map of the robot’s surroundings.</p>
+<ol class="arabic">
+<li><p class="first">Launch the simulator</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_colors.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">Launch 3d_mapping.launch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 3d_mapping.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">Launch 3d_mapping_display.launch to visualize the result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 3d_mapping_display.launch
+</pre></div>
+</div>
+</li>
+<li><p class="first">To move the robot open another terminal window and run teleop twist keyboard</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun robotont_demos teleop_keyboard.launch
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Notice that the teleop node only receives keypresses when the terminal window is active.</p>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/3d_mapping_gazebo.png"><img alt="../_images/3d_mapping_gazebo.png" src="../_images/3d_mapping_gazebo.png" style="width: 400px;" /></a>
 </div></blockquote>
 </div>
 </div>

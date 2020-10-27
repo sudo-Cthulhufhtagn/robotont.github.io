@@ -4,6 +4,9 @@
 Using only the simulated robot
 ##############################
 
+This setup tutorial will guide you through setting up your PC to run the simulated robot with the demos.
+
+
 Installing Ubuntu
 -----------------
 
@@ -26,11 +29,24 @@ Cloning Robotont's packages
 
 All Robotont's packages can be accessed from `Robotont's GitHub <https://github.com/robotont>`__.
 
-To clone the packages:
+Packages necessary to run the Gazebo simulation with Robotont's demos are following:
+
+#. `robotont_description <https://github.com/robotont/robotont_description>`__
+
+#. `robotont_nuc_description <https://github.com/robotont/robotont_nuc_description>`__
+
+#. `robotont_gazebo <https://github.com/robotont/robotont_gazebo>`__
+
+#. `robotont_navigation <https://github.com/robotont/robotont_gazebo>`__
+
+#. `robotont_demos <https://github.com/robotont/robotont_demos>`__
+
+
+To clone the packages, for example, robotont_description:
 
 .. code-block:: bash
       
-    git clone https://github.com/robotont/package_name.git
+    git clone https://github.com/robotont/robotont_description.git
 
 Building the catkin workspace
 ------------------------------
@@ -55,6 +71,10 @@ For automatic sourcing:
 
       echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
+Running the demos with Gazebo
+-----------------------------
+
+Tutorial for running the simulation with the demos can be found here: :ref:`demos_on_gazebo`.
 
 
     

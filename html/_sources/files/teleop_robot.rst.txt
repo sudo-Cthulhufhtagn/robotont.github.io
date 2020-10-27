@@ -12,25 +12,20 @@ Controlling the robot
 #. To set and control the robot speed, the velocity commands need to be published continuously.
 
 
-Setup
-------
-#. Install teleop twist keyboard
+Controlling the robot using teleop twist keyboard
+-------------------------------------------------
+#. If teleop twist keyboard is not installed
 
    .. code-block:: bash
       
       sudo apt update
       sudo apt install ros-melodic-teleop-twist-keyboard
 
-#. From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__.
-
-#. Establish an ssh connection between the robot and the user PC as shown here: :ref:`connecting-remotely`.
-
-Controlling the robot using teleop twist keyboard
--------------------------------------------------
-
 #. Open a new terminal window
 
-#. **On ROBOTONT on-board computer** run the following command:
+#. GEt the robot and PC into the same ROS environment as shown here: :ref:`same_env`.
+
+#. **On ROBOTONT on-board computer** or on **on PC** run the following command:
 
    .. code-block:: bash
       
@@ -59,7 +54,9 @@ Controlling the robot using teleop twist keyboard
 
 Controlling the robot using an Android device
 ----------------------------------------------
- 
+
+#. From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__.
+
 #. Open the ROS Control app on your phone
 
 #. Insert the ROBOTONT's IP address into Master URI field by entering the following:

@@ -99,6 +99,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-robotont-and-pc-into-the-same-ros-environment">Getting the Robotont and PC into the same ROS environment</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#hostname-based-setup">Hostname based setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ip-address-based-setup">IP-address based setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-demos-with-gazebo">Running the demos with Gazebo</a></li>
 </ul>
 </li>
 </ul>
@@ -178,6 +179,7 @@
             
   <div class="section" id="using-the-robot-with-a-user-pc">
 <h1>Using the robot with a user PC<a class="headerlink" href="#using-the-robot-with-a-user-pc" title="Permalink to this headline">¶</a></h1>
+<p>This setup tutorial will guide you through setting up your PC to use it with Robotont.</p>
 <div class="section" id="setting-up-the-pc">
 <span id="setting-up-pc"></span><h2>Setting up the PC<a class="headerlink" href="#setting-up-the-pc" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="installing-ubuntu">
@@ -196,6 +198,13 @@
 <div class="section" id="cloning-robotont-s-packages">
 <h3>Cloning Robotont’s packages<a class="headerlink" href="#cloning-robotont-s-packages" title="Permalink to this headline">¶</a></h3>
 <p>All Robotont’s packages can be accessed from <a class="reference external" href="https://github.com/robotont">Robotont’s GitHub</a>.</p>
+<p>Packages necessary to run the demos from PC’s terminal are following:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://github.com/robotont/robotont_description">robotont_description</a></li>
+<li><a class="reference external" href="https://github.com/robotont/robotont_nuc_description">robotont_nuc_description</a></li>
+<li><a class="reference external" href="https://github.com/robotont/robotont_gazebo">robotont_navigation</a></li>
+<li><a class="reference external" href="https://github.com/robotont/robotont_demos">robotont_demos</a></li>
+</ol>
 <p>To clone the packages:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/robotont/package_name.git
 </pre></div>
@@ -318,6 +327,10 @@ Note that the environment variable has to be set for each terminal window! To ma
 </pre></div>
 </div>
 <p>Similarly to the hostname based setup, append the commands to <cite>.bashrc</cite> to set the variables automatically.</p>
+</div>
+<div class="section" id="running-the-demos-with-gazebo">
+<h3>Running the demos with Gazebo<a class="headerlink" href="#running-the-demos-with-gazebo" title="Permalink to this headline">¶</a></h3>
+<p>Tutorial for running the demos can be found here: <a class="reference internal" href="demo_robot.html#demos-on-robot"><span class="std std-ref">Demos on Robotont</span></a>.</p>
 </div>
 </div>
 </div>

@@ -1,3 +1,5 @@
+.. _demos_on_robot:
+
 #################
 Demos on Robotont
 #################
@@ -36,7 +38,7 @@ The following packages are needed to run the demos:
 
 Uses Cartographer to create a 2D map of the robot's surroundings.
 
-#. **On Robotont on-board computer** launch 2d_slam.launch
+#. **On Robotont on-board computer or on PC** launch 2d_slam.launch
 
    .. code-block:: bash
       
@@ -48,7 +50,7 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
       
       roslaunch robotont_demos 2d_slam_display.launch
 
-#. To move the robot open another terminal window **on the PC** and run teleop twist keyboard
+#. To move the robot open another terminal window **on robotont on-board computer or on the PC** and run teleop twist keyboard
 
    .. code-block:: bash
       
@@ -56,12 +58,30 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
+ROS navstack
+************
+#. Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.
+
+#. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
+ 
+   .. image:: /files/pictures/poseestimatearrow.png
+    :width: 400
+
+
+#.  To tell the robot where to go, click on 2D Nav Goal
+    and drag the arrow to where you want the robot to go
+    and which way does it have to face.
+
+   .. image:: /files/pictures/2dnavgoalarrow.png
+    :width: 400
+
+
 3D mapping
 ----------
 
 Creates a 3D map of the robot's surroundings.
 
-#. **On Robotont on-board computer** launch 3d_mapping.launch
+#. **On Robotont on-board computer or on PC** launch 3d_mapping.launch
 
    .. code-block:: bash
       
@@ -73,7 +93,7 @@ Creates a 3D map of the robot's surroundings.
       
       roslaunch robotont_demos 3d_mapping_display.launch
 
-#. To move the robot open another terminal window **on the user PC** and run teleop twist keyboard
+#. To move the robot open another terminal window **on robotont on-board computer or on user PC** and run teleop twist keyboard
 
    .. code-block:: bash
       
@@ -89,7 +109,7 @@ AR tracking
 
 The robot identifies and tracks the pose of the provided AR tag and acts accordingly.
 
-#. **On Robotont on-board computer** launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)
+#. **On Robotont on-board computer or on PC** launch ar_follow_the_leader.launch (change tag_nr with your AR tag number)
 
    .. code-block:: bash
       
@@ -101,7 +121,7 @@ The robot identifies and tracks the pose of the provided AR tag and acts accordi
       
       roslaunch robotont_demos ar_marker_display.launch
 
-#. To move the robot open another terminal window **on PC** and run teleop twist keyboard
+#. To move the robot open another terminal window **on Robotont on-board computer or on PC** and run teleop twist keyboard
 
    .. code-block:: bash
       
@@ -109,20 +129,3 @@ The robot identifies and tracks the pose of the provided AR tag and acts accordi
     
     
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
-
-ROS navstack
-------------------
-#. Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.
-
-#. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
- 
-   .. image:: /files/pictures/poseestimatearrow.png
-    :width: 400
-
-
-#.  To tell the robot where to go, click on 2D Nav Goal
-    and drag the arrow to where you want the robot to go
-    and which way does it have to face.
-
-   .. image:: /files/pictures/2dnavgoalarrow.png
-    :width: 400
