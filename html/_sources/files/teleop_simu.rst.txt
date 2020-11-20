@@ -38,13 +38,15 @@ Controlling the robot using teleop twist keyboard
    .. image:: /files/pictures/twist_keys.png
        :width: 400
 
-   .. hint:: Notice that the teleop node only receives keypresses only when the terminal window is active.
+   .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.
 
    .. tip:: Use :code:`CTRL + C` to stop the node.
 
 
 Controlling the robot using an Android device
 ---------------------------------------------
+
+#. Make sure that the user PC and Android device are connected to the same wifi router
 
 #. Open the ROS Control app on your phone
 

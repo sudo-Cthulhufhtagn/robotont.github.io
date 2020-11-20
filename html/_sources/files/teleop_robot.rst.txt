@@ -23,7 +23,7 @@ Controlling the robot using teleop twist keyboard
 
 #. Open a new terminal window
 
-#. GEt the robot and PC into the same ROS environment as shown here: :ref:`same_env`.
+#. Get the robot and PC into the same ROS environment as shown here: :ref:`same_env`.
 
 #. **On ROBOTONT on-board computer** or on **on PC** run the following command:
 
@@ -48,12 +48,16 @@ Controlling the robot using teleop twist keyboard
        * PRESS "k" TO STOP THE ROBOT!
        * PRESS THE EMERGENCY SWITCH ON THE ROBOT.
    
-   .. hint:: Notice that the teleop node only receives keypresses only when the terminal window is active.
+   .. hint:: Notice that the teleop node receives keypresses only when the terminal window is active.
    
    .. tip:: Use :code:`CTRL + C` to stop the node.
 
 Controlling the robot using an Android device
 ----------------------------------------------
+
+#. Turn on robotont
+
+#. Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router
 
 #. From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__.
 

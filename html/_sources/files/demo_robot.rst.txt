@@ -58,8 +58,9 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
-ROS navstack
-************
+Setting 2D navigation goals
+****************************
+
 #. Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.
 
 #. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
