@@ -57,20 +57,14 @@ The launch file has four arguments:
 
 * x_pos - chooses x coordinate of the world, controls where the robot will spawn, default: 0
 
-* driver_hack: chooses whether a driver_hack will be used or not, is necessary if the robot will turn very slowly while using the simulator
 
-    * default: true
-
-    * options: true, false
-
-
-For example, the following command will spawn the robot to a map called bangbang.world in position x=2, 
-the model that will be used is robotont_gazebo_nuc and driver_hack will be on.
+For example, the following command will spawn the robot to a world called bangbang.world in position x=2 and 
+the model that will be used is robotont_gazebo_nuc.
 
    
    .. code-block:: bash
 
-      roslaunch robotont_gazebo gazebo.launch world:=$(rospack find robotont_gazebo)/worlds/bangbang.world model:=robotont_gazebo_nuc x_pos:=2 driver_hack:=true
+      roslaunch robotont_gazebo gazebo.launch world:=$(rospack find robotont_gazebo)/worlds/bangbang.world model:=robotont_gazebo_nuc x_pos:=2
 
 
 Worlds

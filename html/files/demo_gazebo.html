@@ -221,19 +221,11 @@ sudo apt install ros-melodic-move-base
 </li>
 <li><p class="first">x_pos - chooses x coordinate of the world, controls where the robot will spawn, default: 0</p>
 </li>
-<li><p class="first">driver_hack: chooses whether a driver_hack will be used or not, is necessary if the robot will turn very slowly while using the simulator</p>
-<blockquote>
-<div><ul class="simple">
-<li>default: true</li>
-<li>options: true, false</li>
 </ul>
-</div></blockquote>
-</li>
-</ul>
-<p>For example, the following command will spawn the robot to a map called bangbang.world in position x=2,
-the model that will be used is robotont_gazebo_nuc and driver_hack will be on.</p>
+<p>For example, the following command will spawn the robot to a world called bangbang.world in position x=2 and
+the model that will be used is robotont_gazebo_nuc.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch world:<span class="o">=</span><span class="k">$(</span>rospack find robotont_gazebo<span class="k">)</span>/worlds/bangbang.world model:<span class="o">=</span>robotont_gazebo_nuc x_pos:<span class="o">=</span><span class="m">2</span> driver_hack:<span class="o">=</span><span class="nb">true</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch world:<span class="o">=</span><span class="k">$(</span>rospack find robotont_gazebo<span class="k">)</span>/worlds/bangbang.world model:<span class="o">=</span>robotont_gazebo_nuc x_pos:<span class="o">=</span><span class="m">2</span>
 </pre></div>
 </div>
 </div></blockquote>
