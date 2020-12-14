@@ -4,7 +4,7 @@
 Demos on Gazebo
 ###############
 
-Before getting started see: :ref:`before_starting`.
+Before getting started see: :ref:`before_starting`
 
 The following packages are needed to run the demos:
 
@@ -147,7 +147,7 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
 Setting 2D navigation goals
 ****************************
 
-#. Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.
+#. Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.
 
 #. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
  

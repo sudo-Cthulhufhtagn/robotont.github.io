@@ -57,9 +57,9 @@ Controlling the robot using an Android device
 
 #. Turn on robotont
 
-#. Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router
-
 #. From your Android device, go to Google Play Store and install the `ROS Control app <https://play.google.com/store/apps/details?id=com.robotca.ControlApp&hl=en>`__.
+
+#. Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router
 
 #. Open the ROS Control app on your phone
 
