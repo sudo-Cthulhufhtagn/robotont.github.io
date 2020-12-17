@@ -93,7 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#launching-the-simulation">Launching the Simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#worlds">Worlds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#d-mapping">2D Mapping</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ros-navstack">ROS navstack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-2d-navigation-goals">Setting 2D navigation goals</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">3D mapping</a></li>
@@ -170,7 +170,7 @@
             
   <div class="section" id="demos-on-gazebo">
 <span id="id1"></span><h1>Demos on Gazebo<a class="headerlink" href="#demos-on-gazebo" title="Permalink to this headline">¶</a></h1>
-<p>Before getting started see: <a class="reference internal" href="demos_before_starting.html#before-starting"><span class="std std-ref">Before starting</span></a>.</p>
+<p>Before getting started see: <a class="reference internal" href="demos_before_starting.html#before-starting"><span class="std std-ref">Before starting</span></a></p>
 <p>The following packages are needed to run the demos:</p>
 <ol class="arabic">
 <li><p class="first">For 2D mapping:</p>
@@ -221,19 +221,11 @@ sudo apt install ros-melodic-move-base
 </li>
 <li><p class="first">x_pos - chooses x coordinate of the world, controls where the robot will spawn, default: 0</p>
 </li>
-<li><p class="first">driver_hack: chooses whether a driver_hack will be used or not, is necessary if the robot will turn very slowly while using the simulator</p>
-<blockquote>
-<div><ul class="simple">
-<li>default: true</li>
-<li>options: true, false</li>
 </ul>
-</div></blockquote>
-</li>
-</ul>
-<p>For example, the following command will spawn the robot to a map called bangbang.world in position x=2,
-the model that will be used is robotont_gazebo_nuc and driver_hack will be on.</p>
+<p>For example, the following command will spawn the robot to a world called bangbang.world in position x=2 and
+the model that will be used is robotont_gazebo_nuc.</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch world:<span class="o">=</span><span class="k">$(</span>rospack find robotont_gazebo<span class="k">)</span>/worlds/bangbang.world model:<span class="o">=</span>robotont_gazebo_nuc x_pos:<span class="o">=</span><span class="m">2</span> driver_hack:<span class="o">=</span><span class="nb">true</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo gazebo.launch world:<span class="o">=</span><span class="k">$(</span>rospack find robotont_gazebo<span class="k">)</span>/worlds/bangbang.world model:<span class="o">=</span>robotont_gazebo_nuc x_pos:<span class="o">=</span><span class="m">2</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -296,10 +288,10 @@ the model that will be used is robotont_gazebo_nuc and driver_hack will be on.</
 </div>
 </li>
 </ol>
-<div class="section" id="ros-navstack">
-<h3>ROS navstack<a class="headerlink" href="#ros-navstack" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="setting-2d-navigation-goals">
+<h3>Setting 2D navigation goals<a class="headerlink" href="#setting-2d-navigation-goals" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.</p>
+<li><p class="first">Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.</p>
 </li>
 <li><p class="first">For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.</p>
 <a class="reference internal image-reference" href="../_images/poseestimatearrow.png"><img alt="../_images/poseestimatearrow.png" src="../_images/poseestimatearrow.png" style="width: 400px;" /></a>

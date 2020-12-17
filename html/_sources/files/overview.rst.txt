@@ -3,15 +3,23 @@
 Overview
 #############
 
-ROBOTONT’s depth camera gives the ability to see like humans and map the entire environment in 3D. 
-With its omnidirectional wheels, the platform is free to move in any direction at any time. 
-Its transparent design, extendable hardware, and open source software offer plenty of room for customized extensions. 
-ROBOTONT is based on the most widely used software in robotics development called ROS (Robot Operating System). 
-ROS gives open access to the latest software packages that are already used by worldwide known companies, such as, Boeing, Siemens, ABB, etc., 
-and connects the industry with leading research institutions... 
+ROBOTONT is an mobile ground robot with omnidirectional wheels to enable rapid movement in any direction at a desired heading. 
+The sensor system includes a depth camera which allows it to see like humans and map the entire environment in 3D. 
+The powerful on-board computer facilitates running high performance algorithms and libraries. 
+The software stack is open-source and based on ROS (Robot Operating System). 
+Its literally transparent design, modular hardware, and open-source software offer endeless custiomization and extendibility options.
 
-   .. image:: /files/pictures/key784.9-2.jpg
-      :width: 400
+ROBOTONT currently includes the following out-of-the-box demos:
+
+    
+   * Android device, gamepad and keyboard based teleoperation,
+   * 2D mapping and SLAM,
+   * 3D mapping,
+   * AR marker tracking, and
+   * gesture-based human-robot interaction.
+
+   .. image:: /files/pictures/robotont_gen_2_3_multi_view.png
+      :width: 800
 
 Specification
 -------------

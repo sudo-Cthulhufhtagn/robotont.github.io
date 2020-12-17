@@ -4,7 +4,7 @@
 Demos on Gazebo
 ###############
 
-Before getting started see: :ref:`before_starting`.
+Before getting started see: :ref:`before_starting`
 
 The following packages are needed to run the demos:
 
@@ -57,20 +57,14 @@ The launch file has four arguments:
 
 * x_pos - chooses x coordinate of the world, controls where the robot will spawn, default: 0
 
-* driver_hack: chooses whether a driver_hack will be used or not, is necessary if the robot will turn very slowly while using the simulator
 
-    * default: true
-
-    * options: true, false
-
-
-For example, the following command will spawn the robot to a map called bangbang.world in position x=2, 
-the model that will be used is robotont_gazebo_nuc and driver_hack will be on.
+For example, the following command will spawn the robot to a world called bangbang.world in position x=2 and 
+the model that will be used is robotont_gazebo_nuc.
 
    
    .. code-block:: bash
 
-      roslaunch robotont_gazebo gazebo.launch world:=$(rospack find robotont_gazebo)/worlds/bangbang.world model:=robotont_gazebo_nuc x_pos:=2 driver_hack:=true
+      roslaunch robotont_gazebo gazebo.launch world:=$(rospack find robotont_gazebo)/worlds/bangbang.world model:=robotont_gazebo_nuc x_pos:=2
 
 
 Worlds
@@ -150,9 +144,10 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
       roslaunch robotont_demos 2d_slam_display.launch
  
 
-ROS navstack
-************
-#. Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.
+Setting 2D navigation goals
+****************************
+
+#. Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.
 
 #. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
  

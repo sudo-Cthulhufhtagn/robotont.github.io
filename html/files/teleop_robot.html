@@ -184,7 +184,7 @@ sudo apt install ros-melodic-teleop-twist-keyboard
 </li>
 <li><p class="first">Open a new terminal window</p>
 </li>
-<li><p class="first">GEt the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a>.</p>
+<li><p class="first">Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a>.</p>
 </li>
 <li><p class="first"><strong>On ROBOTONT on-board computer</strong> or on <strong>on PC</strong> run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:<span class="o">=</span>/robotont
@@ -207,7 +207,7 @@ sudo apt install ros-melodic-teleop-twist-keyboard
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p class="last">Notice that the teleop node only receives keypresses only when the terminal window is active.</p>
+<p class="last">Notice that the teleop node receives keypresses only when the terminal window is active.</p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
@@ -219,7 +219,11 @@ sudo apt install ros-melodic-teleop-twist-keyboard
 <div class="section" id="controlling-the-robot-using-an-android-device">
 <h2>Controlling the robot using an Android device<a class="headerlink" href="#controlling-the-robot-using-an-android-device" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Turn on robotont</p>
+</li>
 <li><p class="first">From your Android device, go to Google Play Store and install the <a class="reference external" href="https://play.google.com/store/apps/details?id=com.robotca.ControlApp&amp;hl=en">ROS Control app</a>.</p>
+</li>
+<li><p class="first">Connect yout Android device to Robotont’s network or make sure that your Android device and Robotont’s on-board computer are connected to the same wifi router</p>
 </li>
 <li><p class="first">Open the ROS Control app on your phone</p>
 </li>

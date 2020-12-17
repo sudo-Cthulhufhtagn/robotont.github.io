@@ -4,7 +4,7 @@
 Demos on Robotont
 #################
 
-Before using the demos see: :ref:`before_starting`.
+Before using the demos see: :ref:`before_starting`
 
 Note that some of the commands will run on Robotont on-board computer and some on user PC.
 
@@ -58,9 +58,10 @@ Uses Cartographer to create a 2D map of the robot's surroundings.
 
    .. hint:: Notice that the teleop node only receives keypresses when the terminal window is active.
 
-ROS navstack
-************
-#. Using the navstack in ROS is very straightforward, you tell the robot where it is (if it doesnt already know) and where it needs to go.
+Setting 2D navigation goals
+****************************
+
+#. Using ROS Navigation to make the robot move autonomously is pretty straightforward. There are two GUI buttons in RViz to tell the robot where it is located (if it fails to accurately localize at startup) and where it needs to go.
 
 #. For setting initial pose, click on 2D Pose Estimate and drag the arrow where and how the robot actually is.
  
