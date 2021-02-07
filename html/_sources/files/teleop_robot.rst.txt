@@ -5,7 +5,7 @@ Controlling the robot
    .. image:: /files/pictures/coord.png
       :width: 400
 
-#. The robot driver subscribes to a specific type of messages called *velocity commands*. The standard name for this topic is :code:`/cmd_vel` or :code:`/robotont/cmd_vel` when in robot namespace. 
+#. The robot driver subscribes to a specific type of messages called *velocity commands*. The standard name for this topic is :code:`/cmd_vel`. 
 
 #. The message is of type :code:`geometry_msgs/Twist` and it's structure can be found from `ROS wiki <https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html>`__.
 
@@ -29,7 +29,7 @@ Controlling the robot using teleop twist keyboard
 
    .. code-block:: bash
       
-         rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:=/robotont
+         rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
    or
 
@@ -69,7 +69,7 @@ Controlling the robot using an Android device
       
          http://robotont_IP_address:11311
 
-#. Click on "Show advanced options" in the prompted window and fill in "Joystick" and "Odometry" topic names with "robotont/cmd_vel" and "robotont/odom", respectively
+#. Click on "Show advanced options" in the prompted window and fill in "Joystick" and "Odometry" topic names with "cmd_vel" and "odom", respectively
 
 #. Click OK to add the robot
 
