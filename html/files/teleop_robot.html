@@ -169,7 +169,7 @@
 <div><a class="reference internal image-reference" href="../_images/coord.png"><img alt="../_images/coord.png" src="../_images/coord.png" style="width: 400px;" /></a>
 </div></blockquote>
 <ol class="arabic simple">
-<li>The robot driver subscribes to a specific type of messages called <em>velocity commands</em>. The standard name for this topic is <code class="code docutils literal notranslate"><span class="pre">/cmd_vel</span></code> or <code class="code docutils literal notranslate"><span class="pre">/robotont/cmd_vel</span></code> when in robot namespace.</li>
+<li>The robot driver subscribes to a specific type of messages called <em>velocity commands</em>. The standard name for this topic is <code class="code docutils literal notranslate"><span class="pre">/cmd_vel</span></code>.</li>
 <li>The message is of type <code class="code docutils literal notranslate"><span class="pre">geometry_msgs/Twist</span></code> and it’s structure can be found from <a class="reference external" href="https://docs.ros.org/api/geometry_msgs/html/msg/Twist.html">ROS wiki</a>.</li>
 <li>To set and control the robot speed, the velocity commands need to be published continuously.</li>
 </ol>
@@ -187,7 +187,7 @@ sudo apt install ros-melodic-teleop-twist-keyboard
 <li><p class="first">Get the robot and PC into the same ROS environment as shown here: <a class="reference internal" href="setup_robot_pc.html#same-env"><span class="std std-ref">Getting the Robotont and PC into the same ROS environment</span></a>.</p>
 </li>
 <li><p class="first"><strong>On ROBOTONT on-board computer</strong> or on <strong>on PC</strong> run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:<span class="o">=</span>/robotont
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 </pre></div>
 </div>
 <p>or</p>
@@ -232,7 +232,7 @@ sudo apt install ros-melodic-teleop-twist-keyboard
 </pre></div>
 </div>
 </li>
-<li><p class="first">Click on “Show advanced options” in the prompted window and fill in “Joystick” and “Odometry” topic names with “robotont/cmd_vel” and “robotont/odom”, respectively</p>
+<li><p class="first">Click on “Show advanced options” in the prompted window and fill in “Joystick” and “Odometry” topic names with “cmd_vel” and “odom”, respectively</p>
 </li>
 <li><p class="first">Click OK to add the robot</p>
 </li>
@@ -263,7 +263,7 @@ sudo apt install ros-melodic-teleop-twist-keyboard
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, M
+        &copy; Copyright 2021, University of Tartu, Licensed under CC BY-NC
 
     </p>
   </div>

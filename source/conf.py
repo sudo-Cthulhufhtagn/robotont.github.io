@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Robotont'
-copyright = u'2020, M'
+copyright = u'2021, University of Tartu, Licensed under CC BY-NC'
 author = u'M'
 
 # The short X.Y version

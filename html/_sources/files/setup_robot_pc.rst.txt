@@ -89,7 +89,7 @@ Connecting with the robot remotely
 
    .. code-block:: bash
       
-      ssh kasutaja@clearbot-X
+      ssh kasutaja@robotont-X
 
   or 
 
@@ -105,7 +105,7 @@ Connecting with the robot remotely
 5. Enter the password
 
 
-6. When logged in successfully, you can see that the terminal prompt has changed to kasutaja@clearbot-X. This will be an important reference when trying to figure out which terminal is connected to where.
+6. When logged in successfully, you can see that the terminal prompt has changed to kasutaja@robotont-X. This will be an important reference when trying to figure out which terminal is connected to where.
 
   .. image:: /files/pictures/ssh_nt2.png
     :width: 400
@@ -123,7 +123,7 @@ There are two approaches to get the Robotont and PC into the same ROS environmen
   :header: "Machine", "Hostname", "IP-address"
   :widths: 40, 40, 40
 
-  "Robotont", "clearbot-1", "192.168.1.1"
+  "Robotont", "robotont-1", "192.168.1.1"
   "PC", "laptop-1", "192.168.1.101"
 
 Hostname based setup
@@ -135,7 +135,7 @@ In this configuration, the robot and PC query each other via hostnames. It means
 
 .. code-block:: bash
 
-  127.0.1.1 clearbot-1
+  127.0.1.1 robotont-1
   192.168.1.101 laptop-1
 
 
@@ -144,7 +144,7 @@ In this configuration, the robot and PC query each other via hostnames. It means
 .. code-block:: bash
 
   127.0.1.1 laptop-1
-  192.168.1.1 clearbot-1
+  192.168.1.1 robotont-1
 
 
 Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named `ROS_MASTER_URI`, which by default points to localhost.

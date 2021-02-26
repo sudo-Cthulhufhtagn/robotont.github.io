@@ -2,7 +2,7 @@
 Sensors
 #######
 
-Robotont uses a Realsense D435 3D camera, which provides a regular camera feed and a depth sensor. 
+Robotont uses a Realsense D435i 3D camera, which provides a regular camera feed and a depth sensor. 
 
 The camera feed is launched automatically when the robot is turned on.
 

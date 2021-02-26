@@ -240,7 +240,7 @@ catkin build
 </div></blockquote>
 <ol class="arabic" start="3">
 <li><p class="first">Establish an ssh connection (change the X with the ID written on the robot)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh kasutaja@clearbot-X
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh kasutaja@robotont-X
 </pre></div>
 </div>
 </li>
@@ -255,7 +255,7 @@ catkin build
 <ol class="arabic simple" start="4">
 <li>If a yes/no question is asked, enter yes</li>
 <li>Enter the password</li>
-<li>When logged in successfully, you can see that the terminal prompt has changed to <a class="reference external" href="mailto:kasutaja&#37;&#52;&#48;clearbot-X">kasutaja<span>&#64;</span>clearbot-X</a>. This will be an important reference when trying to figure out which terminal is connected to where.</li>
+<li>When logged in successfully, you can see that the terminal prompt has changed to <a class="reference external" href="mailto:kasutaja&#37;&#52;&#48;robotont-X">kasutaja<span>&#64;</span>robotont-X</a>. This will be an important reference when trying to figure out which terminal is connected to where.</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../_images/ssh_nt2.png"><img alt="../_images/ssh_nt2.png" src="../_images/ssh_nt2.png" style="width: 400px;" /></a>
@@ -281,7 +281,7 @@ catkin build
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Robotont</td>
-<td>clearbot-1</td>
+<td>robotont-1</td>
 <td>192.168.1.1</td>
 </tr>
 <tr class="row-odd"><td>PC</td>
@@ -294,13 +294,13 @@ catkin build
 <h3>Hostname based setup<a class="headerlink" href="#hostname-based-setup" title="Permalink to this headline">¶</a></h3>
 <p>In this configuration, the robot and PC query each other via hostnames. It means that both hosts need to have each other’s names associated with IP addresses. These hostname &lt;–&gt; IP pairs are defined in the <cite>/etc/hosts</cite> file. Use your favorite text editor and make sure the following entries exist.</p>
 <p><strong>/etc/hosts on Robotont on-board computer:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 clearbot-1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 robotont-1
 <span class="m">192</span>.168.1.101 laptop-1
 </pre></div>
 </div>
 <p><strong>/etc/hosts on PC:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">127</span>.0.1.1 laptop-1
-<span class="m">192</span>.168.1.1 clearbot-1
+<span class="m">192</span>.168.1.1 robotont-1
 </pre></div>
 </div>
 <p>Next, we need to tell the PC to look for a ROS Master on Robotont. We do that by modifying a special environment variable named <cite>ROS_MASTER_URI</cite>, which by default points to localhost.</p>
@@ -356,7 +356,7 @@ Note that the environment variable has to be set for each terminal window! To ma
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, M
+        &copy; Copyright 2021, University of Tartu, Licensed under CC BY-NC
 
     </p>
   </div>
