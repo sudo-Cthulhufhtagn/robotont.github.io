@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Sensors &mdash; Robotont 0.0.1 documentation</title>
+  <title>Creators’ Lab &mdash; Robotont 0.0.1 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Teleoperation" href="teleop.html" />
-    <link rel="prev" title="Using only the simulated robot" href="setup_pc_only.html" /> 
+    <link rel="next" title="Sound play" href="sound_play.html" />
+    <link rel="prev" title="Demos on Gazebo" href="demo_gazebo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,14 +88,14 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sensors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#displaying-the-camera-feed">Displaying the camera feed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-distances-from-objects">Getting distances from objects</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Creators' Lab.html">Creators’ Lab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creators’ Lab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sound_play.html">Sound play</a></li>
+<li class="toctree-l2"><a class="reference internal" href="telegram_bot.html">Telegram bot</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -144,13 +144,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Sensors</li>
+      <li>Creators’ Lab</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/files/sensors.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/files/Creators&#39; Lab.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,38 +163,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sensors">
-<h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h1>
-<p>Robotont uses a Realsense D435i 3D camera, which provides a regular camera feed and a depth sensor.</p>
-<p>The camera feed is launched automatically when the robot is turned on.</p>
-<div class="section" id="displaying-the-camera-feed">
-<h2>Displaying the camera feed<a class="headerlink" href="#displaying-the-camera-feed" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Establish an ssh connection between the robot and the PC as shown here: <span class="xref std std-ref">connecting-remotely</span></p>
+  <div class="section" id="creators-lab">
+<h1>Creators’ Lab<a class="headerlink" href="#creators-lab" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sound_play.html">Sound play</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sound_play.html#installing-dependencies">Installing dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sound_play.html#copy-code-to-catkin-ws-src">Copy code to catkin_ws/src</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sound_play.html#running-code">Running code:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sound_play.html#you-can-also-run-node-which-speaks-when-robot-starts-moving-or-reaches-maximum-speed">You can also run node which speaks when robot starts moving or reaches maximum speed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sound_play.html#autolaunch">Autolaunch</a></li>
+</ul>
 </li>
-<li><p class="first"><strong>On the PC</strong> display the feed on RViz</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_camera.launch
-</pre></div>
-</div>
+<li class="toctree-l1"><a class="reference internal" href="telegram_bot.html">Telegram bot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="telegram_bot.html#installing-dependencies">Installing dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="telegram_bot.html#copying-code-to-catkin-ws">Copying code to catkin_ws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="telegram_bot.html#how-to-use">How to use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="telegram_bot.html#interface-view">Interface view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="telegram_bot.html#live-example">Live example:</a></li>
+</ul>
 </li>
-</ol>
-</div>
-<div class="section" id="getting-distances-from-objects">
-<h2>Getting distances from objects<a class="headerlink" href="#getting-distances-from-objects" title="Permalink to this headline">¶</a></h2>
-<p>Laserscan_to_distance node provides distances from the closest object from the left, the right and the middle.</p>
-<ol class="arabic">
-<li><p class="first">To run laserscan_to_distance node <strong>on Robotont on-board computer</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_laserscan_to_distance distance_from_depth_image.launch
-</pre></div>
-</div>
-</li>
-<li><p class="first">To display the distances either <strong>on PC</strong> or <strong>on Robotont on-board computer</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic <span class="nb">echo</span> /scan_to_distance
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="../_images/terminal.png"><img alt="../_images/terminal.png" src="../_images/terminal.png" style="width: 400px;" /></a>
-</li>
-</ol>
+</ul>
 </div>
 </div>
 
@@ -204,8 +193,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="teleop.html" class="btn btn-neutral float-right" title="Teleoperation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="setup_pc_only.html" class="btn btn-neutral float-left" title="Using only the simulated robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sound_play.html" class="btn btn-neutral float-right" title="Sound play" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="demo_gazebo.html" class="btn btn-neutral float-left" title="Demos on Gazebo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

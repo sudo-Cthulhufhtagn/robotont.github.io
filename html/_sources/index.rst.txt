@@ -11,3 +11,4 @@ Table of Contents
    files/sensors.rst
    files/teleop.rst
    files/demos.rst
+   files/Creators' Lab

@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Sound play &mdash; Robotont 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Telegram bot" href="telegram_bot.html" />
+    <link rel="prev" title="Creators’ Lab" href="Creators&#39; Lab.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Robotont
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Creators' Lab.html">Creators’ Lab</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sound play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-code-to-catkin-ws-src">Copy code to catkin_ws/src</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-code">Running code:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#or-just-simply-run-this-instead-of-previous-code">Or just simply run this instead of previous code:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#you-can-also-run-node-which-speaks-when-robot-starts-moving-or-reaches-maximum-speed">You can also run node which speaks when robot starts moving or reaches maximum speed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#autolaunch">Autolaunch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="telegram_bot.html">Telegram bot</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Robotont</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Creators&#39; Lab.html">Creators’ Lab</a> &raquo;</li>
+        
+      <li>Sound play</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/files/sound_play.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sound-play">
+<h1>Sound play<a class="headerlink" href="#sound-play" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installing-dependencies">
+<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If your ROS version is noetic install for noetic</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-melodic-sound-play
+</pre></div>
+</div>
+</div>
+<div class="section" id="copy-code-to-catkin-ws-src">
+<h2>Copy code to catkin_ws/src<a class="headerlink" href="#copy-code-to-catkin-ws-src" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/sudo-Cthulhufhtagn/sound_box.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-code">
+<h2>Running code:<a class="headerlink" href="#running-code" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-first-make-sure-that-soundplay-node-py-is-up-and-running admonition">
+<p class="first admonition-title">First make sure that soundplay_node.py is up and running!</p>
+<p class="last">rosrun sound_play soundplay_node.py</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun sound_box first_words.py
+</pre></div>
+</div>
+<div class="section" id="or-just-simply-run-this-instead-of-previous-code">
+<h3>Or just simply run this instead of previous code:<a class="headerlink" href="#or-just-simply-run-this-instead-of-previous-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch sound_box wake_up.launch
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="you-can-also-run-node-which-speaks-when-robot-starts-moving-or-reaches-maximum-speed">
+<h2>You can also run node which speaks when robot starts moving or reaches maximum speed<a class="headerlink" href="#you-can-also-run-node-which-speaks-when-robot-starts-moving-or-reaches-maximum-speed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch sound_box speed_sniffer.launch
+</pre></div>
+</div>
+</div>
+<div class="section" id="autolaunch">
+<h2>Autolaunch<a class="headerlink" href="#autolaunch" title="Permalink to this headline">¶</a></h2>
+<p>Modify <strong>robotont_support/launch/bringup.launch</strong> to make it speak every time it turns on by adding this line  <code class="code docutils literal notranslate"><span class="pre">&lt;include</span> <span class="pre">file=&quot;$(find</span> <span class="pre">robotont_driver)/launch/driver_basic.launch&quot;/&gt;</span></code></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="telegram_bot.html" class="btn btn-neutral float-right" title="Telegram bot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Creators&#39; Lab.html" class="btn btn-neutral float-left" title="Creators’ Lab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, University of Tartu, Licensed under CC BY-NC.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

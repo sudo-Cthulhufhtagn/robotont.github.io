@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Sensors &mdash; Robotont 0.0.1 documentation</title>
+  <title>Telegram bot &mdash; Robotont 0.0.1 documentation</title>
   
 
   
@@ -39,8 +39,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Teleoperation" href="teleop.html" />
-    <link rel="prev" title="Using only the simulated robot" href="setup_pc_only.html" /> 
+    <link rel="prev" title="Sound play" href="sound_play.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,14 +87,21 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sensors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#displaying-the-camera-feed">Displaying the camera feed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-distances-from-objects">Getting distances from objects</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teleop.html">Teleoperation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="demos.html">Demos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Creators' Lab.html">Creators’ Lab</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Creators' Lab.html">Creators’ Lab</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sound_play.html">Sound play</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Telegram bot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copying-code-to-catkin-ws">Copying code to catkin_ws</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use">How to use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interface-view">Interface view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#live-example">Live example:</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -144,13 +150,15 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Sensors</li>
+          <li><a href="Creators&#39; Lab.html">Creators’ Lab</a> &raquo;</li>
+        
+      <li>Telegram bot</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/files/sensors.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/files/telegram_bot.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,39 +171,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sensors">
-<h1>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h1>
-<p>Robotont uses a Realsense D435i 3D camera, which provides a regular camera feed and a depth sensor.</p>
-<p>The camera feed is launched automatically when the robot is turned on.</p>
-<div class="section" id="displaying-the-camera-feed">
-<h2>Displaying the camera feed<a class="headerlink" href="#displaying-the-camera-feed" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Establish an ssh connection between the robot and the PC as shown here: <span class="xref std std-ref">connecting-remotely</span></p>
-</li>
-<li><p class="first"><strong>On the PC</strong> display the feed on RViz</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos display_camera.launch
+  <div class="section" id="telegram-bot">
+<h1>Telegram bot<a class="headerlink" href="#telegram-bot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installing-dependencies">
+<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pyTelegramBotAPI
 </pre></div>
 </div>
-</li>
+</div>
+<div class="section" id="copying-code-to-catkin-ws">
+<h2>Copying code to catkin_ws<a class="headerlink" href="#copying-code-to-catkin-ws" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://github.com/sudo-Cthulhufhtagn/telegram_bot.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-use">
+<h2>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">First check that the bot has token and <strong>only after that</strong> run</p>
+</div>
+<ol class="arabic simple">
+<li>On the robotont side run:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun telegram_bot bot.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>On the user’s side open <a class="reference external" href="http://t.me/robotont_remote_control_bot">bot</a> and press start</li>
 </ol>
 </div>
-<div class="section" id="getting-distances-from-objects">
-<h2>Getting distances from objects<a class="headerlink" href="#getting-distances-from-objects" title="Permalink to this headline">¶</a></h2>
-<p>Laserscan_to_distance node provides distances from the closest object from the left, the right and the middle.</p>
-<ol class="arabic">
-<li><p class="first">To run laserscan_to_distance node <strong>on Robotont on-board computer</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_laserscan_to_distance distance_from_depth_image.launch
-</pre></div>
+<div class="section" id="interface-view">
+<h2>Interface view<a class="headerlink" href="#interface-view" title="Permalink to this headline">¶</a></h2>
+<p>You can launch keyboard either by manually typing <code class="code docutils literal notranslate"><span class="pre">/keyboard</span></code> or just pressing it in telegram welcome meassage, or also from bot menu in the down left corner</p>
+<a class="reference internal image-reference" href="../_images/telegram_bot_interface1.jpg"><img alt="../_images/telegram_bot_interface1.jpg" src="../_images/telegram_bot_interface1.jpg" style="width: 400px;" /></a>
+<p>Central button allows to switch between keyboards</p>
+<a class="reference internal image-reference" href="../_images/telegram_bot_interface2.jpg"><img alt="../_images/telegram_bot_interface2.jpg" src="../_images/telegram_bot_interface2.jpg" style="width: 400px;" /></a>
 </div>
-</li>
-<li><p class="first">To display the distances either <strong>on PC</strong> or <strong>on Robotont on-board computer</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic <span class="nb">echo</span> /scan_to_distance
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="../_images/terminal.png"><img alt="../_images/terminal.png" src="../_images/terminal.png" style="width: 400px;" /></a>
-</li>
-</ol>
-</div>
+<div class="section" id="live-example">
+<h2>Live example:<a class="headerlink" href="#live-example" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OibVwBPJXsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </div>
 
 
@@ -204,8 +219,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="teleop.html" class="btn btn-neutral float-right" title="Teleoperation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="setup_pc_only.html" class="btn btn-neutral float-left" title="Using only the simulated robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sound_play.html" class="btn btn-neutral float-left" title="Sound play" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
