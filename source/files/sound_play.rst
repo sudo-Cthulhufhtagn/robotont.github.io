@@ -45,5 +45,5 @@ You can also run node which speaks when robot starts moving or reaches maximum s
 
 Autolaunch
 ----------
-Modify **robotont_support/launch/bringup.launch** to make it speak every time it turns on by adding this line  :code:`<include file="$(find robotont_driver)/launch/driver_basic.launch"/>`
+Modify **robotont_support/launch/bringup.launch** to make it speak every time it turns on by adding this line  :code:`<include file="$(find sound_box)/launch/wake_up.launch"/>`
 
